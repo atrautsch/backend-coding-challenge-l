@@ -77,7 +77,7 @@ def raw_gist(raw_url: str) -> str:
     response = requests.get(raw_url, timeout=60)
     if not response.ok:
         raise GistApiException(response.status_code, response.content)
-    return response.content.decode('utf-8')
+    return response.content.decode("utf-8")
 
 
 @app.route("/api/v1/search", methods=["POST"])
